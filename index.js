@@ -13,7 +13,6 @@ const {
    mentionedJid,
    processTime,
 } = require("@adiwajshing/baileys")
-const  WAConnection = require('./lib/fetcher').WAConnection(_WAConnection)
 const qrcode = require("qrcode-terminal") 
 const moment = require("moment-timezone") 
 const fs = require("fs") 
