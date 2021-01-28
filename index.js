@@ -627,84 +627,6 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buff, image, {quoted: mek})
 					await limitAdd(sender)
 					break
-                case 'ninjalogo':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                      if (args.length < 1) return reply('Teks nya mana?')
-                      gh = body.slice(11)
-                      gl1 = gh.split("|")[0];
-                      gl2 = gh.split("|")[1];
-                      reply(ind.wait())
-                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=ninjalogo&text1=${gl1}&text2=${gl2}&apikey=BotWeA`, {method: 'get'})
-                      buff = await getBuffer(anu.result)
-                      client.sendMessage(from, buff, image, {quoted: mek})
-                      await limitAdd(sender)
-                      break
-                case 'glitch':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					var gh = body.slice(8)
-					var tels3 = gh.split("|")[0];
-					var tels4 = gh.split("|")[1];
-					if (args.length < 1) return reply(ind.wrongf())
-					reply(ind.wait())
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=glitch&text1=${tels3}&text2=${tels4}&apikey=BotWeA`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {quoted: mek})
-					await limitAdd(sender)
-					break
-                case 'wolflogo':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                      if (args.length < 1) return reply('Teks nya mana?')
-                      gh = body.slice(9)
-                      gl1 = gh.split("|")[0];
-                      gl2 = gh.split("|")[1];
-                      reply(ind.wait())
-                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=wolflogo1&text1=${gl1}&text2=${gl2}&apikey=BotWea`, {method: 'get'})
-                      buffer = await getBuffer(anu.result)
-                      client.sendMessage(from, buffer, image, {quoted: mek})
-                      await limitAdd(sender)
-                      break
-                case 'lionlogo':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                      if (args.length < 1) return reply('Teks nya mana?')
-                      gh = body.slice(9)
-                      gl1 = gh.split("|")[0];
-                      gl2 = gh.split("|")[1];
-                      reply(ind.wait())
-                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=lionlogo&text1=${gl1}&text2=${gl2}&apikey=BotWeA`, {method: 'get'})
-                      buffer = await getBuffer(anu.result)
-                      client.sendMessage(from, buffer, image, {quoted: mek})
-                      await limitAdd(sender)
-                      break
-                case 'nekonime':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				    try {
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nekonime`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Cintai nekonime'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						sa = await getBuffer(`https://i.ibb.co/JcSjmNY/IMG-20210107-WA0052.jpg`)
-						client.sendMessage(from, sa, image, {quoted: mek, caption: 'Error Kak!!'})
-						reply('❌ *ERROR* ❌')
-					}
-					await limitAdd(sender)
-					break
-                case 'kpop':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-                                        reply(ind.wait())
-                                        anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomkpop?apikey=BotWeA`, {method: 'get'})
-                                        if (anu.error) return reply(anu.error)
-                                        buffer = await getBuffer(anu.image)
-                                        randomkpop = `*${anu.desc}`
-                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: randomkpop})
-                                        await limitAdd(sender)
-                                        break
                 case 'husbu':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -716,30 +638,6 @@ client.on('group-participants-update', async (anu) => {
 						console.log(`Error :`, color(e,'red'))
 						reply('❌ *ERROR* ❌')
 					}
-					await limitAdd(sender)
-					break
-					case 'shota':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				    try {
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/randomshota?apikey=BotWeA`)
-						buffer = await getBuffer(res.image)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Cintai husbumu'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					await limitAdd(sender)
-					break
-                case 'jokerlogo':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('𝐭𝐞𝐤𝐬𝐧𝐲𝐚 𝐤𝐚𝐤')
-					tels = body.slice(10)
-					reply(ind.wait())
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${tels}&apikey=BotWeA`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
 					break
                 case 'ranime':
@@ -778,16 +676,6 @@ client.on('group-participants-update', async (anu) => {
 				case 'limit':
 				   if (!isRegistered) return reply(ind.noregis())
 				   checkLimit(sender)
-					break
-				case 'vinta':
-				    if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply(ind.wrongf())
-					vin = body.slice(7)
-					reply(ind.wait())
-					vintage = await getBuffer(`https://m.arugaz.my.id/api/textpro/realvintage?text=${vin}`)
-					client.sendMessage(from, vintage, image, {caption: 'nih anjim ${vin}', quoted: mek})
-					await limitAdd(sender)
 					break
                  case 'avengers':
                  if (!isRegistered) return reply(ind.noregis())
@@ -1550,7 +1438,7 @@ client.on('group-participants-update', async (anu) => {
                         if (!isBotGroupAdmins) return reply(ind.badmin())
                        media = await client.downloadAndSaveMediaMessage(mek)
                          await client.updateProfilePicture (from, media)
-                        reply('𝗦𝘂𝗸𝘀𝗲𝘀 𝗺𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗶𝗰𝗼𝗻 𝗚𝗿𝘂𝗽')
+                        reply('??𝘂𝗸𝘀𝗲𝘀 𝗺𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗶𝗰𝗼𝗻 𝗚𝗿𝘂𝗽')
 					break						
 				case 'add':
 					if (!isGroup) return reply(ind.groupo())
@@ -1614,7 +1502,7 @@ client.on('group-participants-update', async (anu) => {
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`𝘆𝗮𝗵𝗵 @${mentioned[0].split('@')[0]} 𝗷𝗮𝗯𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃`, mentioned, true)
+						mentions(`𝘆𝗮𝗵𝗵 @${mentioned[0].split('@')[0]} 𝗷𝗮𝗯𝗮??𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
