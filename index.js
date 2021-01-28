@@ -1,5 +1,5 @@
 const {
-   WAConnection,
+    WAConnection,
    MessageType,
    Presence,
    MessageOptions,
@@ -12,7 +12,7 @@ const {
    waChatKey,
    mentionedJid,
    processTime,
-} = require("@adiwajshing/baileys")
+} = require('@adiwajshing/baileys');
 const qrcode = require("qrcode-terminal") 
 const moment = require("moment-timezone") 
 const fs = require("fs") 
@@ -350,9 +350,6 @@ client.on('group-participants-update', async (anu) => {
 		    const costum = (pesan, tipe, target, target2) => {
 			client.sendMessage(from, pesan, tipe, {quoted: { key: { fromMe: false, participant: `${target}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target2}` }}})
 			}
-		    const sendPtt = (teks) => {
-		    client.sendMessage(from, audio, mp3, {quoted:mek})
-		    }
 	        /*****************END SCURITY FEATURE ********/
 			
 			
@@ -441,7 +438,8 @@ client.on('group-participants-update', async (anu) => {
                 console.error(err)
             }
         }
-
+           
+            
              //kolor
 			colors = ['red','white','black','blue','yellow','green']
 			
@@ -460,6 +458,26 @@ client.on('group-participants-update', async (anu) => {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			
 			switch(command) {
+				case 'leaderboard':
+				case 'lb':
+				_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+				uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
+                let leaderboardlvl = '-----[ *LEADERBOARD LEVEL* ]----\n\n'
+                let leaderboarduang = '-----[ *LEADERBOARD UANG* ]----\n\n'
+                let nom = 0
+                try {
+                    for (let i = 0; i < 10; i++) {
+                        nom++
+                        leaderboardlvl += `*[${nom}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+                        leaderboarduang += `*[${nom}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Uang*: _Rp${uang[i].uang}_\n┗⊱ *Limit*: ${limitawal - _limit[i].limit}\n`
+                    }
+                    await reply(leaderboardlvl)
+                    await reply(leaderboarduang)
+                } catch (err) {
+                    console.error(err)
+                    await reply(`minimal 10 user untuk bisa mengakses database`)
+                }
+				break
 				case 'mutual':
                 if (!isRegistered) return reply( ind.noregis())
                 if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
@@ -1420,18 +1438,18 @@ client.on('group-participants-update', async (anu) => {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				if (args.length < 1) return client.sendMessage(from, 'Diperlukan kode bahasa!!', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'Mana teks yang ma di jadiin suara? suara saya kah:v?', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, 'Textnya mana om', text, {quoted: mek})
 					dtt = body.slice(8)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
-					dtt.length > 300
-					? reply('lah teks nya kepanjangan bambang😤')
+					dtt.length > 600
+					? reply('Textnya kebanyakan om')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
-							buff = fs.readFileSync(rano)
-							if (err) return reply(ind.stikga())
-							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
+							buffer = fs.readFileSync(rano)
+							if (err) return reply('Gagal om:(')
+							client.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
 					})
