@@ -128,7 +128,6 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 
 ┏━━⊱ *MAKER MENU* ⊰━━┓
 ┣⊱ *${prefix}sticker*
-┣⊱ *${prefix}vinta*
 ┣⊱ *${prefix}avengers*
 ┣⊱ *${prefix}summer*
 ┣⊱ *${prefix}sandwrite*
@@ -141,11 +140,6 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}firework*
 ┣⊱ *${prefix}lava*
 ┣⊱ *${prefix}qrcode*
-┣⊱ *${prefix}ninjalogo*
-┣⊱ *${prefix}glitch*
-┣⊱ *${prefix}wolflogo*
-┣⊱ *${prefix}lionlogo*
-┣⊱ *${prefix}jokerlogo*
 ┣━━⊱  *FUN MENU*  ⊰━━━┫
 ┣⊱ *${prefix}mining*
 ┣⊱ *${prefix}bisakah*
@@ -163,7 +157,6 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}mutual*
 ┣⊱ *${prefix}next*
 ┣━━⊱ *MEDIA MENU* ⊰━━┫
-┣⊱ *${prefix}toxic*
 ┣⊱ *${prefix}quotes*
 ┣⊱ *${prefix}beritahoax*
 ┣⊱ *${prefix}brainly*
@@ -180,9 +173,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}anjing*
 ┣⊱ *${prefix}blowjob*
 ┣⊱ *${prefix}nekonime*
-┣⊱ *${prefix}kpop*
 ┣⊱ *${prefix}husbu*
-┣⊱ *${prefix}shota*
 ┣⊱ *${prefix}ranime*
 ┣━━⊱ *LIMIT & UANG* ⊰━┫
 ┣⊱ *${prefix}limit*
