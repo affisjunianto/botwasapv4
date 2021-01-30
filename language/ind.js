@@ -23,7 +23,7 @@ exports.lvlnoon = () => {
 }
 
 exports.noregis = () => {
-	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar affis|17*`
+	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar AYBPR|17*`
 }
 
 exports.rediregis = () => {
@@ -123,7 +123,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp}
 ┣⊱ *Level* : ${getLevelingLevel(sender)}
 ┣⊱ *User register* : ${_registered.length}
-┗━━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━━┛
+┗━━━⊱  ⸨ *AYBPR* ⸩  ⊰━━━━┛
 
 
 ┏━━⊱ *MAKER MENU* ⊰━━┓
@@ -212,21 +212,20 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}event* [1/0]
 ┣⊱ *${prefix}clone*
 ┣⊱ *${prefix}setppbot*
-┣━━⊱ *THANGKS TO* ⊰━┫
+┣━━⊱ *SPECIAL THANKS TO* ⊰━┫
 ┃
-┣⊱ *AFFIS JUNIANTO*
-┣⊱ *FADHIL GRAPHY*
-┣⊱ *MHANKBARBARS*
-┣⊱ *MYBOT TEAM*
-┣⊱ *AGUNG(XPTN)*
-┣⊱ *BRYAN(SUHU)*
-┣⊱ *TOBZ*
-┣⊱ *ARUGAZ*
+┣⊱ *AMRUL*
+┣⊱ *YOYO(HNZLD)*
+┣⊱ *NABILA*
+┣⊱ *PITOKZ(REZA)*
+┣⊱ *RAKHA*
+┣⊱ *AFFIS*
+┣⊱ *AYBPR TEAM*
 ┃
 ┣⊱ NOTE : TQTO DI HAPUS
 ┃ GW GAK UP LAGI OKE
 ┃
-┗━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━┛
+┗━━⊱  ⸨ *AYBPR* ⸩  ⊰━━━┛
 `
 }
 

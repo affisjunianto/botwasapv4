@@ -33,9 +33,9 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Affis Admin\n' 
+            + 'FN:Yoyo Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=6281229488729:+62 8122-9488-729\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []   
@@ -44,7 +44,7 @@ memberlimit = 2
 cr = '*BOT INI SUDAH TERVERIFIKASI*'
 
 /******** OWNER NUMBER**********/
-const ownerNumber = ["62895710073737@s.whatsapp.net","6282334297175@s.whatsapp.net"] 
+const ownerNumber = ["6281229488729@s.whatsapp.net","62895639082345@s.whatsapp.net","6281229488729@s.whatsapp.net","62895622002734@s.whatsapp.net"] 
 /************************************/
 
        
@@ -505,7 +505,7 @@ client.on('group-participants-update', async (anu) => {
                 hasiltf = jumblah - fee
                 addKoinUser(tujuantf, hasiltf)
                 confirmATM(sender, jumblah)
-                addKoinUser('62895710073737@s.whatsapp.net', fee)
+                addKoinUser('6281229488729@s.whatsapp.net', fee)
                 reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
                 break
 				case 'dompet':
@@ -516,7 +516,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'buylimit':
 				if (!isRegistered) return reply(ind.noregis())
 				payout = body.slice(10)
-				const koinPerlimit = 300
+				const koinPerlimit = 500
 				const total = koinPerlimit * payout
 				if ( checkATMuser(sender) <= total) return reply(`maaf uang kamu belum mencukupi. silahkan kumpulkan dan beli nanti`)
 				if ( checkATMuser(sender) >= total ) {
@@ -651,6 +651,9 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
                 case 'joox':
+                case 'jooxs':
+                case 'jook':
+                case 'musik':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
                 data = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(6)}&apikey=BotWeA`, {method: 'get'})
@@ -663,6 +666,7 @@ client.on('group-participants-update', async (anu) => {
                 await limitAdd(sender)
                 break
                 case 'ytmp3':
+                case 'ytmusik':
                     if (!isRegistered) return reply(ind.noregis())
                     if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply('Urlnya mana um?')
@@ -1061,6 +1065,8 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'donasi':
 				case 'donate':
+				case 'iklan':
+				case 'sewabot':
 				if (!isRegistered) return reply(ind.noregis())
 					client.sendMessage(from, donasi(), text)
 					break
@@ -1087,11 +1093,11 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 				case 'blocklist': 
-					teks = '𝗕𝗟𝗢𝗖𝗞 𝗟𝗜𝗦𝗧 :\n'
+					teks = 'Block List :\n'
 					for (let block of blocked) {
 						teks += `┣➢ @${block.split('@')[0]}\n`
 					}
-					teks += `𝗧𝗼𝘁𝗮𝗹 : ${blocked.length}`
+					teks += `Block : ${blocked.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break
                 case 'hidetag':
@@ -1131,7 +1137,7 @@ client.on('group-participants-update', async (anu) => {
                     case 'truth':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-                const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
+                const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','coli sehari berapa kali?','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
@@ -1471,7 +1477,7 @@ client.on('group-participants-update', async (anu) => {
             case 'owner':
             case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                  client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau aku block kamu',MessageType.text, { quoted: mek} )
 					break    
            case 'setname':
                 if (!isGroup) return reply(ind.groupo())
