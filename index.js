@@ -33,7 +33,7 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Yoyo Admin\n' 
+            + 'FN:AYBPR Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
             + 'TEL;type=CELL;type=VOICE;waid=6281229488729:+62 8122-9488-729\n' 
             + 'END:VCARD' 
@@ -240,7 +240,7 @@ function kyun(seconds){
 const client = new WAConnection()
    client.on('qr', qr => {
    qrcode.generate(qr, { small: true })
-   console.log(color('[','white'),color('∆','red'),color(']','white'),color('qr already scan.subscribe','white'),color('YOU','red'),color('TUBE','white'),color('ampibi gaming','yellow'))
+   console.log(color('[','white'),color('∆','red'),color(']','white'),color('QR ALREADY SCAN.SUBSCRIBE','white'),color('YOU','red'),color('TUBE','white'),color('AYBPR TEAM','yellow'))
 })
 
 client.on('credentials-updated', () => {
