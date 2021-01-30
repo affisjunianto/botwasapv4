@@ -114,42 +114,43 @@ exports.reglevelahf = (command, pushname, getLevelingLevel, sender, ahf) => {
 	return`*Maaf ${pushname} level mu belum mencukupi*\n\n*┏⊱level mu : ${getLevelingLevel(sender)}*\n*┣⊱jenis command : ${command}*\n*┗⊱syarat level : ${ahf}*\n\n_NOTE : CHAT/SELALU ON UNTUK MENDAPATKAN XP_`
 }
 
-exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp, _registered, uangku) => { 
+exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp, _registered, uangku, role) => { 
 	return `
 ┏━━━⊱  *ABOUT USER*  ⊰━━┓
 ┣⊱ *Nama* : ${pushname}
 ┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Uang mu* : Rp${uangku}
 ┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp}
+┣⊱ *Role* : ${role}
 ┣⊱ *Level* : ${getLevelingLevel(sender)}
 ┣⊱ *User register* : ${_registered.length}
 ┗━━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━━┛
 
 
 ┏━━⊱ *MAKER MENU* ⊰━━┓
-┣⊱ *${prefix}sticker*
-┣⊱ *${prefix}avengers*
-┣⊱ *${prefix}summer*
-┣⊱ *${prefix}sandwrite*
-┣⊱ *${prefix}metaldark*
-┣⊱ *${prefix}dropwater*
-┣⊱ *${prefix}greenneon*
-┣⊱ *${prefix}neontext*
-┣⊱ *${prefix}sumery*
-┣⊱ *${prefix}blood*
-┣⊱ *${prefix}firework*
-┣⊱ *${prefix}lava*
-┣⊱ *${prefix}qrcode*
+┣⊱ *${prefix}sticker* 
+┣⊱ *${prefix}avengers* <teks|teks>
+┣⊱ *${prefix}summer* <teks>
+┣⊱ *${prefix}sandwrite* <teks>
+┣⊱ *${prefix}metaldark* <teks>
+┣⊱ *${prefix}dropwater* <teks>
+┣⊱ *${prefix}greenneon* <teks>
+┣⊱ *${prefix}neontext* <teks>
+┣⊱ *${prefix}sumery* <teks>
+┣⊱ *${prefix}blood* <teks>
+┣⊱ *${prefix}firework* <teks>
+┣⊱ *${prefix}lava* <teks>
+┣⊱ *${prefix}qrcode* <teks>
 ┣━━⊱  *FUN MENU*  ⊰━━━┫
 ┣⊱ *${prefix}mining*
-┣⊱ *${prefix}bisakah*
-┣⊱ *${prefix}kapankah*
-┣⊱ *${prefix}apakah*
-┣⊱ *${prefix}rate*
+┣⊱ *${prefix}bisakah* <teks>
+┣⊱ *${prefix}kapankah* <teks>
+┣⊱ *${prefix}apakah* <teks>
+┣⊱ *${prefix}rate* <teks>
 ┣⊱ *${prefix}slap*
 ┣⊱ *${prefix}tampar*
-┣⊱ *${prefix}moddroid*
-┣⊱ *${prefix}happymod*
+┣⊱ *${prefix}moddroid* <teks>
+┣⊱ *${prefix}happymod* <teks>
 ┣⊱ *${prefix}nangis*
 ┣⊱ *${prefix}cium*
 ┣⊱ *${prefix}peluk*
@@ -157,28 +158,25 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}mutual*
 ┣⊱ *${prefix}next*
 ┣━━⊱ *MEDIA MENU* ⊰━━┫
-┣⊱ *${prefix}quotes*
-┣⊱ *${prefix}beritahoax*
-┣⊱ *${prefix}brainly*
+┣⊱ *${prefix}brainly* [error]
 ┣⊱ *${prefix}pinterest*
-┣⊱ *${prefix}resepmasakan*
-┣⊱ *${prefix}igstalk*
-┣⊱ *${prefix}bitly*
+┣⊱ *${prefix}resepmasakan* <teks>
+┣⊱ *${prefix}igstalk* <username>
+┣⊱ *${prefix}bitly* <link>
 ┣━━⊱ *YT & SONG* ⊰━━━┫
-┣⊱ *${prefix}ytmp3*
-┣⊱ *${prefix}ytmp4*
-┣⊱ *${prefix}joox*
+┣⊱ *${prefix}ytmp3* <link>
+┣⊱ *${prefix}ytmp4* <link>
+┣⊱ *${prefix}joox* <judul>
 ┣━━⊱  *NSFW MENU*  ⊰━┫
-┣⊱ *${prefix}pokemon*
 ┣⊱ *${prefix}anjing*
 ┣⊱ *${prefix}blowjob*
 ┣⊱ *${prefix}nekonime*
 ┣⊱ *${prefix}husbu*
 ┣⊱ *${prefix}ranime*
 ┣━━⊱ *LIMIT & UANG* ⊰━┫
-┣⊱ *${prefix}limit*
-┣⊱ *${prefix}buylimit*
-┣⊱ *${prefix}transfer*
+┣⊱ *${prefix}limit* 
+┣⊱ *${prefix}buylimit* <jumblah>
+┣⊱ *${prefix}transfer* <tag |jumblah>
 ┣⊱ *${prefix}dompet*
 ┣━━⊱ *GROUP MENU* ⊰━┫
 ┣⊱ *${prefix}hidetag*
@@ -187,12 +185,12 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}linkgc*
 ┣⊱ *${prefix}tagall*
 ┣⊱ *${prefix}setpp*
-┣⊱ *${prefix}add*
-┣⊱ *${prefix}kick*
-┣⊱ *${prefix}setname*
-┣⊱ *${prefix}setdesc*
-┣⊱ *${prefix}demote*
-┣⊱ *${prefix}promote*
+┣⊱ *${prefix}add* <tag>
+┣⊱ *${prefix}kick* <tag>
+┣⊱ *${prefix}setname* <teks>
+┣⊱ *${prefix}setdesc* <teks>
+┣⊱ *${prefix}demote* <tag>
+┣⊱ *${prefix}promote* <tag>
 ┣⊱ *${prefix}listadmin*
 ┣⊱ *${prefix}group* [buka/tutup]
 ┣⊱ *${prefix}leveling* [enable/disable]
@@ -200,48 +198,45 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}simih* [1/0]
 ┣⊱ *${prefix}welcome* [1/0]
 ┣━━⊱ *OWNER MENU* ⊰━┫
-┣⊱ *${prefix}bc*
-┣⊱ *${prefix}bcgc*
-┣⊱ *${prefix}kickall*
-┣⊱ *${prefix}setreply*
-┣⊱ *${prefix}setprefix*
+┣⊱ *${prefix}bc* <teks>
+┣⊱ *${prefix}bcgc* <teks>
+┣⊱ *${prefix}kickall* <rawan ban>
+┣⊱ *${prefix}setreply* <teks>
+┣⊱ *${prefix}setprefix* <symbol>
 ┣⊱ *${prefix}clearall*
-┣⊱ *${prefix}block*
-┣⊱ *${prefix}unblock*
+┣⊱ *${prefix}block* <tag>
+┣⊱ *${prefix}unblock* <tag>
 ┣⊱ *${prefix}leave*
 ┣⊱ *${prefix}event* [1/0]
-┣⊱ *${prefix}clone*
+┣⊱ *${prefix}clone* <tag>
 ┣⊱ *${prefix}setppbot*
-┣━━⊱ *THANGKS TO* ⊰━┫
+┣━━⊱ *THANGKS TO* ⊰━━┫
 ┃
-┣⊱ *AFFIS JUNIANTO*
-┣⊱ *FADHIL GRAPHY*
-┣⊱ *MHANKBARBARS*
-┣⊱ *MYBOT TEAM*
-┣⊱ *AGUNG(XPTN)*
-┣⊱ *BRYAN(SUHU)*
-┣⊱ *TOBZ*
-┣⊱ *ARUGAZ*
+┣⊱ *AFFIS JUNIANTO* <dev>
+┣⊱ *FADHIL GRAPHY* <partner>
+┣⊱ *MHANKBARBARS* <sc ori>
+┣⊱ *MYBOT TEAM* <team>
 ┃
 ┣⊱ NOTE : TQTO DI HAPUS
 ┃ GW GAK UP LAGI OKE
 ┃
-┗━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━┛
+┗━━⊱  ⸨ *X-BOT* ⸩  ⊰━━━━┛
 `
 }
 
-exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
+exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role) => {
 	return`
 *「 SELAMAT 」*
 ┏⊱ *Nama* : ${pushname}
 ┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Xp* : ${getLevelingXp(sender)}
-┣⊱ *Limit* = +3
+┣⊱ *Limit* : +3
+┣⊱ *Role* :  ${role}
 ┗⊱ *Level* : ${getLevel} ⊱ ${getLevelingLevel(sender)}
 `}
  
 exports.limitend = (pushname) => {
-	return`*maaf ${pushname} limit hari ini habis*\n*limit di reset setiap jam 24:00*`
+	return`*maaf ${pushname} limit hari ini habis*\n*beli limit untuk mendapatkan limit/ naik level*`
 }
 
 exports.limitcount = (limitCounts) => {
