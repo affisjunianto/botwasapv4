@@ -33,7 +33,7 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const { ind } = require('./language')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:AYBPR Admin\n' 
+            + 'FN: AYBPR Admin\n' 
             + 'ORG: Pengembang XBot;\n' 
             + 'TEL;type=CELL;type=VOICE;waid=6281229488729:+62 8122-9488-729\n' 
             + 'END:VCARD' 
@@ -41,7 +41,7 @@ prefix = '#'
 blocked = []   
 limitawal = 30
 memberlimit = 2
-cr = '*BOT INI SUDAH TERVERIFIKASI*'
+cr = '*AYBPR TEAM BOT V4.1*'
 
 /******** OWNER NUMBER**********/
 const ownerNumber = ["6281229488729@s.whatsapp.net","62895639082345@s.whatsapp.net","6281229488729@s.whatsapp.net","62895622002734@s.whatsapp.net"] 
@@ -479,8 +479,9 @@ client.on('group-participants-update', async (anu) => {
                 }
 				break
 				case 'mutual':
+				case 'mutualan':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
+                if (isGroup) return  reply( 'Perintah ini tidak bisa digunakan di dalam grup! ||*Prefix saat ini adalah: [ ${prefix}menu ]*||')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -488,7 +489,7 @@ client.on('group-participants-update', async (anu) => {
             break
             case 'next':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
+                if (isGroup) return  reply( 'Perintah ini tidak bisa digunakan di dalam grup! ||*Prefix saat ini adalah: [ ${prefix}menu ]*||')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -506,7 +507,7 @@ client.on('group-participants-update', async (anu) => {
                 addKoinUser(tujuantf, hasiltf)
                 confirmATM(sender, jumblah)
                 addKoinUser('6281229488729@s.whatsapp.net', fee)
-                reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
+                reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumlah transfer : ${jumblah}\npajak : ${fee}`)
                 break
 				case 'dompet':
 				if (!isRegistered) return reply(ind.noregis())
@@ -570,7 +571,7 @@ client.on('group-participants-update', async (anu) => {
 					})
 					await limitAdd(sender)
 					break
-                case 'blowjob':
+                case 'bloawoksmwjob':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					ranp = getRandom('.gif')
@@ -587,6 +588,8 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
 					case 'cium':
+					case 'ciyum':
+					case 'kiss':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					ranp = getRandom('.gif')
@@ -603,6 +606,7 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
 					case 'peluk':
+					case 'peyuk':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					ranp = getRandom('.gif')
@@ -641,6 +645,7 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
                 case 'ranime':
+                case 'randomanime':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 					gatauda = body.slice(8)
@@ -770,7 +775,8 @@ client.on('group-participants-update', async (anu) => {
 					aruga = body.slice(8)
 					reply(ind.wait())
 					aruga = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummery?text=${aruga}`)
-					client.sendMessage(from, aruga, image, {caption: 'Nih kak', quoted: mek})
+					client.sendMessage(from, aruga, image, {caption: 'Nih kak
+					*Prefix saat ini adalah: [ ${prefix}menu ]* ', quoted: mek})
 					await limitAdd(sender)
 					break
 					case 'blood':
@@ -780,7 +786,8 @@ client.on('group-participants-update', async (anu) => {
 					aruga = body.slice(7)
 					reply(ind.wait())
 					aruga = await getBuffer(`https://arugaz.my.id/api/textpro/bloodtext?text=${aruga}`)
-					client.sendMessage(from, aruga, image, {caption: 'Nih kak', quoted: mek})
+					client.sendMessage(from, aruga, image, {caption: 'Nih kak
+					*Prefix saat ini adalah: [ ${prefix}menu ]* ', quoted: mek})
 					await limitAdd(sender)
 					break
 					case 'firework':
@@ -1004,12 +1011,12 @@ client.on('group-participants-update', async (anu) => {
                       if (isLimit(sender)) return reply(ind.limitend(pushname))
                       if (!isEventon) return reply(`maaf ${pushname} event mining tidak di aktifkan oleh owner`)
                       if (isOwner) {
-                      const one = 999999999
+                      const one = 1000
                       addLevelingXp(sender, one)
                       addLevelingLevel(sender, 99)
                       reply(`karena anda owner kami dari team bot mengirim ${one}Xp untuk anda`)
                       }else{
-                      const mining = Math.ceil(Math.random() * 10000)
+                      const mining = Math.ceil(Math.random() * 5)
                       addLevelingXp(sender, mining)
                       await reply(`*selamat* ${pushname} kamu mendapatkan *${mining}Xp*`)
                       }
@@ -1058,6 +1065,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                case 'help': 
 				case 'menu':
+				case 'bot':
 				if (!isRegistered) return reply(ind.noregis())
 				    const reqXp  = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
 				    const uangku = checkATMuser(sender)
@@ -1088,7 +1096,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *AMPIBI*\n*AUTHOR* : AMPIBI\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*AYBPR Team* : ${me.name}\n*OWNER* : *YOYO*\n*AUTHOR* : AMRUL,YOYO,REZA,RAKHA,NABILA,\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -1264,7 +1272,7 @@ client.on('group-participants-update', async (anu) => {
 								fs.unlinkSync(media)
 							})
 					} else {
-						reply('𝗸𝗶𝗿𝗶𝗺 𝗳𝗼𝘁𝗼 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗲𝗽𝘁𝗶𝗼𝗻 ${prefix}𝗼𝗰𝗿')
+						reply('𝗸𝗶𝗿𝗶𝗺 𝗳𝗼𝘁𝗼 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗲𝗽𝘁𝗶𝗼𝗻 ${prefix}menu')
 					}
 					await limitAdd(sender)
 					break
@@ -1337,12 +1345,14 @@ client.on('group-participants-update', async (anu) => {
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 600
-					? reply('Textnya kebanyakan om')
+					? reply('Textnya kebanyakan om'
+					'*Prefix saat ini adalah: [ ${prefix}menu ]* ')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
 							buffer = fs.readFileSync(rano)
-							if (err) return reply('Gagal om:(')
+							if (err) return reply('Gagal om:('
+							'*Prefix saat ini adalah: [ ${prefix}menu ]* ')
 							client.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
@@ -1608,11 +1618,11 @@ client.on('group-participants-update', async (anu) => {
 						if (isNsfw) return reply(' *sudah aktif*  !!')
 						nsfw.push(from)
 						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝗻𝘀𝗳𝘄 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶')
+						reply('❬ SUCCSESS ❭ mengaktifkan fitur nsfw di group ini')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/bot/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝗻𝘀𝗳𝘄 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ SUCCSESS ❭ menonaktifkan fitur nsfw di group ini')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1651,16 +1661,18 @@ client.on('group-participants-update', async (anu) => {
 				case 'welcome':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
-					if (args.length < 1) return reply('Boo :𝘃')
+					if (args.length < 1) return reply('Boo 😘')
 					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('*SUDAH AKTIF* !!!')
+						if (isWelkom) return reply('*SUDAH AKTIF Tod* !!!')
 						welkom.push(from)
 						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘄𝗲𝗹𝗰𝗼𝗺𝗲/𝗹𝗲𝗳𝘁 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ SUCCSESS ❭ mengaktifkan fitur welcome di group ini')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./database/bot/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘄𝗲𝗹𝗰𝗼𝗺𝗲/𝗹𝗲𝗳𝘁 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ SUCCSESS ❭ mengaktifkan fitur welcome di group ini')
+					} else {
+						reply('ketik 1 untuk mengaktifkan, 0 untuk menonaktifkan fitur')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1673,11 +1685,11 @@ client.on('group-participants-update', async (anu) => {
 						if (isEventon) return reply('*SUDAH AKTIF* !!!')
 						event.push(from)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 EVENT 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️*')
+						reply('*❬ SUCCSESS ❭ Mengaktifkan EVENT di group ini*')
 					} else if (Number(args[0]) === 0) {
 						event.splice(from, 1)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 EVENT 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️*')
+						reply('*❬ SUCCSESS ❭ Menonaktifkan EVENT di group ini*')
 					} else {
 						reply(ind.satukos())
 					}
