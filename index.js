@@ -775,8 +775,7 @@ client.on('group-participants-update', async (anu) => {
 					aruga = body.slice(8)
 					reply(ind.wait())
 					aruga = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummery?text=${aruga}`)
-					client.sendMessage(from, aruga, image, {caption: 'Nih kak'
-					'*Prefix saat ini adalah: [ ${prefix}menu ]* ', quoted: mek})
+					client.sendMessage(from, aruga, image, {caption: 'Nih kak •||Prefix saat ini adalah: [ ${prefix}menu ]||• ', quoted: mek})
 					await limitAdd(sender)
 					break
 					case 'blood':
