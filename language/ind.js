@@ -1,5 +1,6 @@
 exports.wait = () => {
-	return`*「 WAIT 」 SEDANG PROSES*`
+	return`*「 WAIT 」 SEDANG PROSES*
+	*Prefix saat ini adalah: [ ${prefix}menu ]* `
 }
 
 exports.succes = () => {
@@ -7,15 +8,18 @@ exports.succes = () => {
 }
 
 exports.lvlon = () => {
-	return`*「 ENABLE 」 LEVELING*`
+	return`*「 ENABLE 」 LEVELING*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.lvloff = () => {
-	return`*「 DISABLE 」 LEVELING*`
+	return`*「 DISABLE 」 LEVELING*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.lvlnul = () => {
-	return`*LEVELMU MASIH KOSONG*`
+	return`*LEVELMU MASIH KOSONG*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.lvlnoon = () => {
@@ -27,11 +31,13 @@ exports.noregis = () => {
 }
 
 exports.rediregis = () => {
-	return`*「 SUDAH DAFTAR 」*\n\n*kamu sudah terdaftar di database bot*`
+	return`*「 SUDAH DAFTAR 」*\n\n*kamu sudah terdaftar di database bot*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.stikga = () => {
-	return`*yah gagal coba ulangi beberapa saat lagi*`
+	return`*yah gagal coba ulangi beberapa saat lagi*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.linkga = () => {
@@ -51,11 +57,13 @@ exports.ownerg = () => {
 }
 
 exports.admin = () => {
-	return`*「ADMIN GROUP ONLY」*`
+	return`*「ADMIN GROUP ONLY」*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.badmin = () => {
-	return`*「BOT HARUS JADI ADMIN」*`
+	return`*「BOT HARUS JADI ADMIN」*
+	*Prefix saat ini adalah: [ ${prefix}menu ]*`
 }
 
 exports.nsfwoff = () => {
@@ -123,6 +131,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp}
 ┣⊱ *Level* : ${getLevelingLevel(sender)}
 ┣⊱ *User register* : ${_registered.length}
+┣⊱ *Prefix: [ ${prefix}menu ]*
 ┗━━━⊱  ⸨ *AYBPR* ⸩  ⊰━━━━┛
 
 
