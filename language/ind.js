@@ -120,29 +120,26 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *Nama* : ${pushname}
 ┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Uang mu* : Rp${uangku}
-┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp}
-┣⊱ *Role* : ${role}
+┣⊱ *XP* : ${getLevelingXp(sender)}/${reqXp} 
 ┣⊱ *Level* : ${getLevelingLevel(sender)}
 ┣⊱ *User register* : ${_registered.length}
 ┗━━━⊱  ⸨ *AFFIS* ⸩  ⊰━━━━┛
 
+ *${prefix}info*
+ *${prefix}donasi*
+ *${prefix}owner*
 
 ┏━━⊱ *MAKER MENU* ⊰━━┓
 ┣⊱ *${prefix}sticker* 
-┣⊱ *${prefix}avengers* <teks|teks>
-┣⊱ *${prefix}summer* <teks>
-┣⊱ *${prefix}sandwrite* <teks>
-┣⊱ *${prefix}metaldark* <teks>
-┣⊱ *${prefix}dropwater* <teks>
-┣⊱ *${prefix}greenneon* <teks>
-┣⊱ *${prefix}neontext* <teks>
-┣⊱ *${prefix}sumery* <teks>
-┣⊱ *${prefix}blood* <teks>
-┣⊱ *${prefix}firework* <teks>
-┣⊱ *${prefix}lava* <teks>
-┣⊱ *${prefix}qrcode* <teks>
+┣⊱ *${prefix}quotemaker* <text|author>
+┣⊱ *${prefix}qrcode* <text>
+┣⊱ *${prefix}ttp*
+┣⊱ *${prefix}stickerhide* <text>
+┣⊱ *${prefix}emoji*
 ┣━━⊱  *FUN MENU*  ⊰━━━┫
-┣⊱ *${prefix}mining*
+┣⊱ *${prefix}lirik* <text>
+┣⊱ *${prefix}artinama>
+┣⊱ *${prefix}chord* <text>
 ┣⊱ *${prefix}bisakah* <teks>
 ┣⊱ *${prefix}kapankah* <teks>
 ┣⊱ *${prefix}apakah* <teks>
@@ -151,9 +148,6 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}tampar*
 ┣⊱ *${prefix}moddroid* <teks>
 ┣⊱ *${prefix}happymod* <teks>
-┣⊱ *${prefix}nangis*
-┣⊱ *${prefix}cium*
-┣⊱ *${prefix}peluk*
 ┣━━⊱ *MUTUAL* ⊰━━━━━┫
 ┣⊱ *${prefix}mutual*
 ┣⊱ *${prefix}next*
@@ -163,6 +157,9 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}resepmasakan* <teks>
 ┣⊱ *${prefix}igstalk* <username>
 ┣⊱ *${prefix}bitly* <link>
+┣⊱ *${prefix}tiktok* <username>
+┣⊱ *${prefix}ssweb* <link>
+┣⊱ *${prefix}kbbi* <text>
 ┣━━⊱ *YT & SONG* ⊰━━━┫
 ┣⊱ *${prefix}ytmp3* <link>
 ┣⊱ *${prefix}ytmp4* <link>
@@ -171,15 +168,21 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ┣⊱ *${prefix}anjing*
 ┣⊱ *${prefix}blowjob*
 ┣⊱ *${prefix}nekonime*
+┣⊱ *${prefix}pokemon*
 ┣⊱ *${prefix}husbu*
+┣⊱ *${prefix}nangis*
+┣⊱ *${prefix}cium*
+┣⊱ *${prefix}peluk*
 ┣⊱ *${prefix}ranime*
 ┣━━⊱ *LIMIT & UANG* ⊰━┫
 ┣⊱ *${prefix}limit* 
 ┣⊱ *${prefix}buylimit* <jumblah>
 ┣⊱ *${prefix}transfer* <tag |jumblah>
 ┣⊱ *${prefix}dompet*
+┣⊱ *${prefix}leaderboard*
 ┣━━⊱ *GROUP MENU* ⊰━┫
 ┣⊱ *${prefix}hidetag*
+┣⊱ *${prefix}blocklist*
 ┣⊱ *${prefix}grouplist*
 ┣⊱ *${prefix}level*
 ┣⊱ *${prefix}linkgc*
@@ -231,7 +234,6 @@ exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel,
 ┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
 ┣⊱ *Xp* : ${getLevelingXp(sender)}
 ┣⊱ *Limit* : +3
-┣⊱ *Role* :  ${role}
 ┗⊱ *Level* : ${getLevel} ⊱ ${getLevelingLevel(sender)}
 `}
  
